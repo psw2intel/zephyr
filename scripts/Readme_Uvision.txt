@@ -6,7 +6,20 @@ Build you zephyr sample:-
 Dependencies:-
 a)Install uvision5 from http://www2.keil.com/mdk5 select MDK-Professional, user need to have license to use professional version.
 
+
 b)Create windows environment for zephyr using http://docs.zephyrproject.org/getting_started/installation_win.html
+
+Install python3.5 or greater
+
+Install requirements.txt using 
+command: 
+For zephyr compilation:-
+pip install -r zephyr\Scripts\requirements.txt
+and
+For uvision project generation:-
+pip install -r zephyr\Scripts\tools\requirements.txt
+
+
 Setup arm based toolchain & try a sample build.
 e.g:-
 cd C:\Users\varunsha\zephyr\samples\hello_world\
@@ -16,7 +29,9 @@ ninja
 
 2)
 Use "project.py" to generate uvision project( -m switch is for target, -i for ide)
-use current directory as build folder of sample app.
+use build folder as current directory for executing script
+e.g:-
+cd C:\Users\varunsha\zephyr\samples\philosophers\build
 python -u C:\Users\varunsha\zephyr\scripts\tools\project.py -i uvision -m K64F --source .
 
 3)
@@ -32,6 +47,7 @@ scan: ['.'] C:\Users\varunsha\zephyr\samples\hello_world\build
 linker:C:\Users\varunsha\zephyr\samples\hello_world\build\zephyr\linker.cmd
  generating...
  
+You will file 2 files u
 As of now GCC_ARM & K64F is supported , additional targets can be added by editing  target.json, index.json &  alias.json
 
 4) Working model:-
